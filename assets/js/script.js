@@ -1,4 +1,3 @@
-//1. Implementar el Patrón Módulo mediante IIFE
 const moduleIIFE = (() => {
     const setSrcPrivate = (url, id) => {
       id.setAttribute('src', url);
@@ -8,7 +7,6 @@ const moduleIIFE = (() => {
     }
   })();
   
-  //2. Establecer una clase padre denominada Multimedia
   class Multimedia {
     constructor(url) {
       let _url = url;
@@ -23,7 +21,6 @@ const moduleIIFE = (() => {
     }
   }
   
-  //3. Crear una clase “Reproductor”, siendo hija de la clase padre Multimedia 
   class Reproductor extends Multimedia {
     constructor(url, id) {
       super(url);
@@ -43,10 +40,8 @@ const moduleIIFE = (() => {
   let $peliculas = new Reproductor('https://www.youtube.com/embed/5PSNL1qE6VY', peliculas);
   let $series = new Reproductor('https://www.youtube.com/embed/MfvvhM6IJS0', series);
   
-  //5. Invocar al método “playMultimedia” para cada instancia creada, mostrando así los videos en el documento HTML.
   $musica.playMultimedia();
   $peliculas.playMultimedia();
   $series.playMultimedia();
   
-  //6. Utiliza el método “setInicio” para modificar el tiempo de inicio en alguna de las instancias creadas.
   $peliculas.setInicio(60);
